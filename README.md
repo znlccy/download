@@ -32,3 +32,15 @@ Response:
     "message": "Success"
 }
 ~~~
+
+>Download主要是统计SDK下载次数了访问次数
+
+### 目录结构
++ controller  -->控制器层
++ mapper -->Dao层
++ model -->Bean层
++ request -->请求层
++ response -->响应层
++ service -->服务层接口
++ serviceImpl -->服务层接口实现层
++ utils -->工具层

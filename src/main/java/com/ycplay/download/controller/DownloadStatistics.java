@@ -26,17 +26,26 @@ import java.util.Map;
 @Controller
 public class DownloadStatistics {
 
+    /**
+     * 声明下载服务
+     */
     @Autowired
     private DownloadService downloadService;
 
+    /**
+     * @comment: download 实现下载链接
+     * @param: [request, response]
+     * @return: org.springframework.web.servlet.ModelAndView
+     */
     @GetMapping(value = "/download")
-    public ModelAndView test(HttpServletRequest request, HttpServletResponse response)  {
-        String url = "redirect:http://www.baidu.com";
+    public ModelAndView download(HttpServletRequest request)  {
+        String uid = request.getParameter("game");
+        String url = "redirect:https://play.google.com/store/apps/details?id="+uid;
 
         final Download download = new Download();
         download.setIp(IPUtil.getIpAddr(request));
         download.setTime(new Timestamp(System.currentTimeMillis()));
-        download.setUid("nihao");
+        download.setUid(uid);
 
         new Thread(
             new Runnable() {
