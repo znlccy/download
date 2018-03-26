@@ -46,8 +46,6 @@ public class DownloadStatistics {
                 }
             }
         ).start();
-
-        System.out.println("获得IP地址"+ IPUtil.getIpAddr(request));
         return new ModelAndView(url);
     }
 

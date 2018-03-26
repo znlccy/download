@@ -1,8 +1,8 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.100.106.59:3306/db_ycplay?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://localhost:3306/db_ycplay?useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
-    password: yd123456
+    password: root
 server:
   port: 8888
