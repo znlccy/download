@@ -35,6 +35,12 @@ public class Download {
     private String uid;
 
     /**
+     * 声明下载平台
+     */
+    @Column(name = "platform")
+    private String platform;
+
+    /**
      * 声明时间
      */
     @Column(name = "time")
@@ -92,6 +98,24 @@ public class Download {
      */
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    /**
+     * @comment: getPlatform 实现获取平台
+     * @param: []
+     * @return: java.lang.String
+     */
+    public String getPlatform() {
+        return platform;
+    }
+
+    /**
+     * @comment: setPlatform 实现设置平台
+     * @param: [platform]
+     * @return: void
+     */
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
 
     /**
