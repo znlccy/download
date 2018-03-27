@@ -63,6 +63,6 @@ public interface DownloadMapper {
      */
     @Select("SELECT COUNT(*) AS downloadCount, COUNT(DISTINCT ip) AS accessCount \n" +
             "FROM tb_download \n" +
-            "WHERE TIME BETWEEN #{beginTime} and #{endTime}")
+            "WHERE TIME BETWEEN CONCAT(#{beginTime},' 00:00:00') and CONCAT(#{endTime},' 23:59:59')\n")
     Response statistics(@Param("beginTime") String beginTime, @Param("endTime") String endTime);
 }
