@@ -41,11 +41,15 @@ public class DownloadStatistics {
     public ModelAndView download(HttpServletRequest request)  {
         String uid = request.getParameter("game");
         String url = "redirect:https://play.google.com/store/apps/details?id="+uid;
-
         final Download download = new Download();
         download.setIp(IPUtil.getIpAddr(request));
         download.setTime(new Timestamp(System.currentTimeMillis()));
         download.setUid(uid);
+        if (uid.contains("https://play.google.com/store/apps/details")) {
+            download.setPlatform("Android");
+        } else {
+            download.setPlatform("Apple");
+        }
 
         new Thread(
             new Runnable() {
