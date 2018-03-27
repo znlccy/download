@@ -21,7 +21,7 @@ public interface DownloadMapper {
      * @param: [download]
      * @return: void
      */
-    @Insert("insert into tb_download(ip,uid,time) values(#{download.ip},#{download.uid},#{download.time})")
+    @Insert("insert into tb_download(ip,uid,time,platform) values(#{download.ip},#{download.uid},#{download.time},#{download.platform})")
     void addDownload(@Param("download") Download download);
 
     /**
