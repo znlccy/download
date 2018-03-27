@@ -37,7 +37,7 @@ public class DownloadStatistics {
      * @param: [request, response]
      * @return: org.springframework.web.servlet.ModelAndView
      */
-    @GetMapping(value = "/download")
+    @GetMapping(value = "/")
     public ModelAndView download(HttpServletRequest request)  {
         String uid = request.getParameter("game");
         /*String url = "redirect:https://play.google.com/store/apps/details?id="+uid;*/
